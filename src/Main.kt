@@ -1,5 +1,5 @@
 fun main(args: Array<String>){
-    var listNumbers = arrayListOf(4,45,36,44,36,67,27,58,79,10)
+    var listNumbers = arrayListOf(2,32,52,46,35,63,74,56,43,52,11,17)
 
     BubbleSort_FromApp(listNumbers)
     BubbleSort_MyImplementation(listNumbers)
@@ -9,16 +9,16 @@ fun BubbleSort_FromApp(list:ArrayList<Int>) {
     var listNumberMI = list
     var maxCantidadMI:Int = listNumberMI.count()
     var numberMI = 0
-    var restMI = 2
+    var restMI = 0
 
     while (maxCantidadMI>1){
 
-        for (i in (listNumberMI.size) downTo 2 ){
+        for (i in (listNumberMI.size-1) downTo 1+restMI ){
             //If you change Asc to Desc change < to >
-            if (listNumberMI[i-1]<listNumberMI[i-2]){
-                numberMI = listNumberMI[i-2]
-                listNumberMI[i-2] = listNumberMI[i-1]
-                listNumberMI[i-1] = numberMI
+            if (listNumberMI[i]>listNumberMI[i-1]){
+                numberMI = listNumberMI[i-1]
+                listNumberMI[i-1] = listNumberMI[i]
+                listNumberMI[i] = numberMI
             }
         }
         restMI++
